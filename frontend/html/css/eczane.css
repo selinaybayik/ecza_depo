@@ -1,0 +1,231 @@
+  /* Genel Sayfa Stili */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    overflow-x: auto;
+}
+
+/* Üst Menü */
+.header {
+    background-color: #004080;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    height: 50px;
+}
+
+/* Logout list */
+.logout {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+/* Logout item */
+.logout li {
+    margin-left: 20px;
+}
+
+/* Çıkış butonu stil */
+.logout a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    padding: 10px 20px;
+}
+
+/* Çıkış butonu hover */
+.logout a:hover {
+    color: orange;
+}
+
+.header h1 {
+    margin: 0;
+}
+
+/* Yan Menü */
+.sidebar {
+    width: 250px;
+    background-color: #314a8a;
+    color: white;
+    position: fixed;
+    top: 50px;
+    bottom: 0;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    font-size: 16px;
+    gap: 10px; /* İkon ve metin arasındaki boşluk */
+}
+
+.sidebar a:hover {
+    background-color: #475d80;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+.icon {
+    width: 20px; /* İkon boyutu */
+    height: 20px;
+}
+
+.menu-item {
+    margin-bottom: 10px;
+}
+
+.submenu {
+    margin-left: 15px;
+    display: none;
+}
+
+.menu-item:hover .submenu {
+    display: block;
+}
+
+/* Ana İçerik Alanı */
+.main-container {
+    margin-left: 270px;
+    margin-top: 60px;
+    padding: 20px;
+    min-width: 1400px; /* Sürüklenebilir alan */
+}
+
+/* Bölümler */
+.dashboard-section {
+    display: flex;
+    gap: 30px;
+    flex-wrap: nowrap;
+    margin-bottom: 30px; /* Üstten mesafe */
+}
+
+.analysis-box {
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-width: 400px;
+}
+
+.chart-container {
+    width: 100%;
+    height: 260px;
+    position: relative;
+}
+
+.chloromap-container {
+    width: 100%;
+    height: 350px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#chloromap {
+    width: 100%;
+    height: 100%;
+}
+
+/* Tercih edilen kategoriler ve talepler */
+.preference-container {
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+    margin-bottom: 70px; /* Üstten mesafe */
+}
+
+.preference-box {
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    flex: 1;
+}
+
+.performance-analysis {
+    width: 750px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex: 1;
+}
+
+.select-box {
+    margin: 5px;
+    width: auto;
+    padding: 5px;
+    font-size: 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Yıl bazlı talepler */
+.yearly-demand-container {
+    display: flex;
+    gap: 30px;
+}
+
+.select-box-container {
+    width: 100%;
+    padding: 10px;
+}
+
+/* En çok ve en az tercih edilen kategoriler */
+.preference-box {
+    background-color: #fff; /* Beyaz arka plan */
+}
+
+/* Yıl Bazlı Tercih Edilen Kategori ve Tercih Edilen Kategoriler */
+.preference-box, .performance-analysis {
+    height: 500px; /* Yüksekliği biraz daha azalttım */
+}
+
+/* Yeni Eklenen Bölüm */
+.talep-tahmin-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    height: 400px;
+}
+
+.talep-tahmin-box {
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-width: 300px;
+}
+
+.talep-tahmin-box input {
+    width: 80px;
+    padding: 5px;
+    margin-right: 10px;
+}

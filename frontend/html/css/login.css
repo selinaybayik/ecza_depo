@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    max-width: 1200px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+.logiin-form {
+    flex: 1;
+    padding: 40px;
+    background-color: #003d73;
+    color: #fff;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.user-icon {
+    width: 50px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border: 2px solid orange;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 8px;
+}
+
+.input-container .icon {
+    width: 20px;
+    margin-right: 8px;
+}
+
+input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+button {
+    background: linear-gradient(45deg, #00008b, #4b0082);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.login-button:hover {
+    opacity: 0.9;
+}
+
+.logo-box {
+    flex: 1;
+    text-align: center;
+    padding: 40px;
+}
+
+.logo {
+    width: 80%;
+    max-width: 300px;
+}

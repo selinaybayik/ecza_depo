@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/login.css">
+    <title>Yönetici Girişi</title>
+</head>
+<body>
+    <div class="container">
+        <div class="logiin-form">
+            <div class="header">
+                <img src="resimler/icons8-user-32.png" alt="User Icon" class="user-icon">
+                <h2>YÖNETİCİ GİRİŞİ</h2>
+            </div>
+            <form id="login-form">
+                <label for="email">E-POSTA:</label>
+                <div class="input-container">
+                    <img src="resimler/email.png" alt="Email Icon" class="icon">
+                    <input type="email" id="email" placeholder="E-posta adresinizi giriniz" required autocomplete="email">
+                </div>
+                <label for="password">ŞİFRE:</label>
+                <div class="input-container">
+                   <img src="resimler/icons8-password-50.png" alt="Lock Icon" class="icon"> 
+                   <input type="password" id="password" placeholder="Şifrenizi giriniz" required autocomplete="current-password">
+                </div>
+                <button type="submit">GİRİŞ</button>
+            </form>
+        </div>
+        <div class="logo-box">
+            <img src="resimler/Selçuk-Ecza-Deposu.png" alt="Selçuk Ecza Deposu Logo" class="logo">
+        </div>
+    </div>
+    <script src="javascript/login.js"></script>
+</body>
+</html>

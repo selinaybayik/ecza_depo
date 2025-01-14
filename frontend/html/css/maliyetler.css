@@ -1,0 +1,200 @@
+body { 
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    overflow-x: auto;
+}
+
+.header {
+        background-color: #004080;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 20px;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+        height: 50px;
+    }
+
+    /* Logout list */
+    .logout {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+    }
+
+    /* Logout item */
+    .logout li {
+        margin-left: 20px;
+    }
+
+    /* Çıkış butonu stil */
+    .logout a {
+        text-decoration: none;
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        transition: all 0.3s ease;
+        padding: 10px 20px;
+    }
+
+    /* Çıkış butonu hover */
+    .logout a:hover {
+        color: orange;
+    }
+
+
+.sidebar {
+    width: 250px;
+    background-color: #314a8a;
+    color: white;
+    position: fixed;
+    top: 50px;
+    bottom: 0;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sidebar a {
+        color: white;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        padding: 10px 0;
+        font-size: 16px;
+        gap: 10px; /* İkon ve metin arasındaki boşluk */
+    }
+
+    .sidebar a:hover {
+        background-color: #475d80;
+        border-radius: 5px;
+        padding-left: 10px;
+    }
+
+    .icon {
+        width: 20px; /* İkon boyutu */
+        height: 20px;
+    }
+
+.menu-item {
+    margin-bottom: 10px;
+}
+
+.submenu {
+    margin-left: 15px;
+    display: none;
+}
+
+.menu-item:hover .submenu {
+    display: block;
+}
+
+.main {
+    margin-left: 270px;
+    padding: 20px;
+    background-color: #f4f4f9;
+    min-height: 100vh;
+    width: calc(100% - 270px);
+    position: relative;
+    top: 50px;
+    box-sizing: border-box;
+}
+
+.dashboard-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.stats-container {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.stat-box {
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    background-color: #004080; /* Varsayılan renk */
+}
+
+.stat-box:nth-child(2) {
+    background-color: #b22222;
+}
+
+.stat-box:nth-child(3) {
+    background-color: #ff8c00;
+}
+
+.stat-box:nth-child(4) {
+    background-color: #228b22;
+}
+
+.charts-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: flex-start;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.chart {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-width: 560px;
+    height: 430px;
+}
+
+.chart canvas {
+    max-width: 100%;
+    height: auto;
+}
+
+.select-box {
+    margin: 5px;
+    width: auto;
+    padding: 5px;
+    font-size: 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.select-container {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#chart5 {
+width: 100%;
+height: 400px; /* Yüksekliği artırabilirsiniz */
+max-width: 800px; /* İsteğe bağlı olarak maksimum genişlik ekleyebilirsiniz */
+margin: 0 auto; /* Ortalamak için */
+}

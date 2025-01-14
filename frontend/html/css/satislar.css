@@ -1,0 +1,244 @@
+body { 
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    overflow-x: auto;
+}
+
+.header {
+    background-color: #004080;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    height: 50px;
+}
+
+/* Logout list */
+.logout {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+/* Logout item */
+.logout li {
+    margin-left: 20px;
+}
+
+/* Çıkış butonu stil */
+.logout a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    padding: 10px 20px;
+}
+
+/* Çıkış butonu hover */
+.logout a:hover {
+    color: orange;
+}
+
+
+.sidebar {
+    width: 250px;
+    background-color: #314a8a;
+    color: white;
+    position: fixed;
+    top: 50px;
+    bottom: 0;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    font-size: 16px;
+    gap: 10px; /* İkon ve metin arasındaki boşluk */
+}
+
+.sidebar a:hover {
+    background-color: #475d80;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+.icon {
+    width: 20px; /* İkon boyutu */
+    height: 20px;
+}
+
+.menu-item {
+    margin-bottom: 10px;
+}
+
+.submenu {
+    margin-left: 15px;
+    display: none;
+}
+
+.menu-item:hover .submenu {
+    display: block;
+}
+
+.main {
+    margin-left: 270px;
+    padding: 20px;
+    background-color: #f4f4f9;
+    margin-top: 60px;
+}
+
+.select-container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.select-box {
+    font-size: 14px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.charts-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.chart {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    text-align: center;
+    width: 30%;
+}
+
+.chart canvas {
+    max-width: 100%;
+    height: auto;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.input-box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 48%;
+    text-align: center;
+}
+
+#resultContainer {
+    margin-top: 20px;
+}
+#yearProfitChartCanvas {
+    width: 250px; /* İstediğiniz genişlik */
+    height: 240px; /* İstediğiniz yükseklik */
+    margin: auto; /* Ortalamak için */
+    display: block; /* Ortalamayı etkili kılmak için */
+}
+
+input, button {
+    padding: 5px;
+    margin: 5px 0;
+    width:10%;
+}
+table {
+    width: 20%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 3px;
+    text-align: center;
+}
+th {
+    background-color: #f4f4f4;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+#tahminOrani {
+    width: 100px;
+    height: 30px;
+    font-size: 14px;
+}
+
+#tahminButton {
+    height: 34px;
+    font-size: 14px;
+    padding: 0 15px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+#header-container {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+#forecastTable {
+width: 100%; /* Genişlik tüm div'i kapsar */
+border-collapse: collapse;
+margin-top: 20px;
+}
+#forecastTable th, #forecastTable td {
+border: 1px solid #ddd;
+padding: 10px; /* Hücre içindeki boşluk artırıldı */
+text-align: center;
+}
+#forecastTable th {
+background-color: #f4f4f4;
+font-weight: bold;
+}
+#forecastTable tbody tr:nth-child(even) {
+background-color: #f9f9f9; /* Alternatif satır renkleri */
+}
+#forecastTable tbody tr:hover {
+background-color: #e0e0e0; /* Hover efekti */
+}
+
+/* Tahmin sonucu kutusu */
+#tahminSonucContainer {
+width: 100%; /* Konteyner genişliği de tüm alanı kaplar */
+margin-top: 20px;
+}

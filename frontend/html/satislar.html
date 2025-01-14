@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Depo Yönetimi Dashboard</title>
+    <link rel="stylesheet" href="css/satislar.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="header">
+        <h1>Selçuk Ecza Deposu</h1>
+        <ul class="logout">
+            <li>
+                <a href="login.html" id="logoutLink">
+                    <span>Çıkış</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="sidebar">
+        <h2>Yönetim</h2>
+        <a href="deneme.html">
+            <img src="resimler/home.png" alt="Anasayfa" class="icon">
+            Anasayfa
+        </a>
+        <div class="menu-item">
+            <a href="#">
+                <img src="resimler/warehouse.png" alt="Depo Yönetimi" class="icon">
+                Depo Yönetimi
+            </a>
+            <div class="submenu">
+                <a href="./rakip.html">
+                    <img src="resimler/map.png" alt="Rakip Depo Konum" class="icon">
+                    Rakip Depo Konum
+                </a>
+                <a href="./satislar.html">
+                    <img src="resimler/revenue.png" alt="Satış" class="icon">
+                    Satış
+                </a>
+                <a href="./kapasite.html">
+                    <img src="resimler/storage.png" alt="Kapasite" class="icon">
+                    Kapasite
+                </a>
+                <a href="./maliyetler.html">
+                    <img src="resimler/reduction.png" alt="Maliyetler" class="icon">
+                    Maliyetler
+                </a>
+            </div>
+        </div>
+        <div class="menu-item">
+            <a href="eczane.html">
+                <img src="resimler/medicine.png" alt="Eczane ve Bölge Analizi" class="icon">
+                Eczane ve Bölge Analizi
+            </a>
+        </div>
+    </div>
+
+    <div class="main">
+        <!-- İl ve Depo Seçim -->
+        <div class="select-container">
+            <select class="select-box" id="citySelect">
+                <option value="">İl Seç</option>
+            </select>
+            <select class="select-box" id="depotSelect">
+                <option value="">Depo Seç</option>
+            </select>
+        </div>
+
+        <!-- Grafikler -->
+        <div class="charts-container">
+            <div class="chart">
+                <h3>Yıllık Gelir Analizi</h3>
+                <canvas id="incomeChartCanvas"></canvas>
+            </div>
+            <div class="chart">
+                <h3>En Çok Satılan 5 Ürün</h3>
+                <canvas id="mostSoldChart"></canvas>
+            </div>
+            <div class="chart">
+                <h3>En Az Satılan 5 Ürün</h3>
+                <canvas id="leastSoldChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Yıllık Kar Oranları ve Tahminleme -->
+        <div class="flex-container">
+            <div class="input-box">
+                <h3>2025 Yılı Kar Oranı Tahmini Gösterme Grafiği (Önceki Yıl Oranları Dahil)</h3>
+                <div class="select-container">
+                    <select id="karIlSelect" class="select-box">
+                        <option value="">İl Seç</option>
+                    </select>
+                    <select id="karDepoSelect" class="select-box">
+                        <option value="">Depo Seç</option>
+                    </select>
+                    <select id="karYilSelect" class="select-box">
+                        <option value="">Yıl Seç</option>
+                    </select>
+                </div>
+                <canvas id="yearProfitChartCanvas"></canvas>
+            </div>
+
+            <div class="input-box">
+                <h3>2025 Yılı Gelir Tahmini</h3>
+                <div class="input-container" style="display: flex; align-items: flex-start; gap: 15px; flex-wrap: wrap;">
+                    <div style="display: flex; align-items: center;">
+                        <label for="tahminOrani" style="margin-right: 5px;">Satış Oranı (%):</label>
+                        <input id="tahminOrani" type="number" placeholder="Satış Tahmin Oranı" step="0.01" style="width: 120px;">
+                    </div>
+                    
+                    <div style="display: flex; align-items: center;">
+                        <label for="tahminIlSelect" style="margin-right: 5px;">İl Seç:</label>
+                        <select id="tahminIlSelect" style="width: 150px;">
+                            <option value="">İl Seçin</option>
+                            <!-- Buraya dinamik olarak iller eklenecek -->
+                        </select>
+                    </div>
+            
+                    <button id="tahminButton">Tahminle</button>
+                </div>
+                <canvas id="tahminChartCanvas"></canvas>
+            </div>            
+        </div>
+    </div>
+    <script src="javascript/satislar.js"></script>
+</body>
+</html>

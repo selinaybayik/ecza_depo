@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Depo Yönetimi Dashboard</title>
+    <link rel="stylesheet" href="css/kapasite.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="header">
+        <h1>Selçuk Ecza Deposu</h1>
+        <ul class="logout">
+            <li>
+                <a href="login.html" id="logoutLink">
+                    <span>Çıkış</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="sidebar">
+        <h2>Yönetim</h2>
+        <a href="deneme.html">
+            <img src="resimler/home.png" alt="Anasayfa" class="icon">
+            Anasayfa
+        </a>
+        <div class="menu-item">
+            <a href="#">
+                <img src="resimler/warehouse.png" alt="Depo Yönetimi" class="icon">
+                Depo Yönetimi
+            </a>
+            <div class="submenu">
+                <a href="./rakip.html">
+                    <img src="resimler/map.png" alt="Rakip Depo Konum" class="icon">
+                    Rakip Depo Konum
+                </a>
+                <a href="./satislar.html">
+                    <img src="resimler/revenue.png" alt="Satış" class="icon">
+                    Satış
+                </a>
+                <a href="./kapasite.html">
+                    <img src="resimler/storage.png" alt="Kapasite" class="icon">
+                    Kapasite
+                </a>
+                <a href="./maliyetler.html">
+                    <img src="resimler/reduction.png" alt="Maliyetler" class="icon">
+                    Maliyetler
+                </a>
+            </div>
+        </div>
+        <div class="menu-item">
+            <a href="eczane.html">
+                <img src="resimler/medicine.png" alt="Eczane ve Bölge Analizi" class="icon">
+                Eczane ve Bölge Analizi
+            </a>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="input-container">
+            <h3>Yıllık Depo Kapasite Kullanım Oranlarının Karşılaştırılması(stok bazlı)</h3>
+            <!-- İl ve Depo Seçim Kutuları Başlığın Altına Taşındı -->
+            <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px;">
+                <div>
+                    <label for="citySelect">İl Seç:</label>
+                    <select id="citySelect" class="select-box">
+                        <option value=""></option>
+                        <!-- İl seçenekleri dinamik olarak buraya yüklenecek -->
+                    </select>
+                </div>
+                <div>
+                    <label for="depotSelect">Depo Seç:</label>
+                    <select id="depotSelect" class="select-box">
+                        <option value=""></option>
+                        <!-- Depo seçenekleri dinamik olarak buraya yüklenecek -->
+                    </select>
+                </div>
+                <div>
+                    <label for="compareCity2">İl Seç 2:</label>
+                    <select id="compareCity2" class="select-box">
+                        <option value=""></option>
+                        <!-- İl seçenekleri dinamik olarak buraya yüklenecek -->
+                    </select>
+                </div>
+                <div>
+                    <label for="compareDepot2">Depo Seç 2:</label>
+                    <select id="compareDepot2" class="select-box">
+                        <option value=""></option>
+                        <!-- Depo seçenekleri dinamik olarak buraya yüklenecek -->
+                    </select>
+                    <button id="compareButton" style="margin-top: 10px;">Karşılaştır</button>
+                </div>
+            </div>
+            <div class="chart-container">
+            <canvas id="chartKapasite" style="margin-top: 20px;"></canvas></div>
+        </div>
+        <div class="input-container">
+            <h3>Doluluk Oranına Göre Kapasite Karşılama Tahmini(stok bazlı)</h3>
+            <input list="percentages" id="tahminOrani" name="tahminOrani">
+            <datalist id="percentages">
+            <option value="10"></option>
+            <option value="30"></option>
+            <option value="50"></option>
+            <option value="70"></option>
+            <option value="90"></option>
+            <option value="130"></option>
+            </datalist>
+
+            <label>İl Seç:</label>
+            <select id="il">
+                <option value="">Seçiniz</option>
+            </select>
+
+            <button id="tahminleButton">Hesapla & Tahminle</button>
+
+            <div class="chart-container">
+                <canvas id="capacityChart"></canvas>
+            </div>
+        </div>
+        <div class="input-container">
+            <h3>Depo Kapasite Karşılama ve Personel Sayısı</h3>
+            <div class="form-section">
+                <div class="form-group">
+                    <label for="newCitySelect">İl Seç:</label>
+                    <select id="newCitySelect" class="select-box">
+                        <option value="">Seçiniz</option>
+                        <!-- İl seçenekleri dinamik olarak buraya yüklenecek -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="newDepotSelect">Depo Seç:</label>
+                    <select id="newDepotSelect" class="select-box">
+                        <option value="">Seçiniz</option>
+                        <!-- Depo seçenekleri dinamik olarak buraya yüklenecek -->
+                    </select>
+                </div>
+            </div>
+            <div class="chart-container">
+                <canvas id="personelChart"></canvas>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    <script src="javascript/kapasite.js"></script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Depo Yönetimi Dashboard</title>
+    <link rel="stylesheet" href="css/eczane.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+    <div class="header">
+        <h1>Selçuk Ecza Deposu</h1>
+        <ul class="logout">
+            <li>
+                <a href="login.html" id="logoutLink">
+                    <span>Çıkış</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Yan Menü -->
+    <div class="sidebar">
+        <h2>Yönetim</h2>
+        <a href="deneme.html">
+            <img src="resimler/home.png" alt="Anasayfa" class="icon">
+            Anasayfa
+        </a>
+        <div class="menu-item">
+            <a href="#">
+                <img src="resimler/warehouse.png" alt="Depo Yönetimi" class="icon">
+                Depo Yönetimi
+            </a>
+            <div class="submenu">
+                <a href="./rakip.html">
+                    <img src="resimler/map.png" alt="Rakip Depo Konum" class="icon">
+                    Rakip Depo Konum
+                </a>
+                <a href="./satislar.html">
+                    <img src="resimler/revenue.png" alt="Satış" class="icon">
+                    Satış
+                </a>
+                <a href="./kapasite.html">
+                    <img src="resimler/storage.png" alt="Kapasite" class="icon">
+                    Kapasite
+                </a>
+                <a href="./maliyetler.html">
+                    <img src="resimler/reduction.png" alt="Maliyetler" class="icon">
+                    Maliyetler
+                </a>
+            </div>
+        </div>
+        <div class="menu-item">
+            <a href="eczane.html">
+                <img src="resimler/medicine.png" alt="Eczane ve Bölge Analizi" class="icon">
+                Eczane ve Bölge Analizi
+            </a>
+        </div>
+    </div>
+
+    <!-- Ana İçerik -->
+    <div class="main-container">
+        <!-- Üst Bölüm -->
+        <div class="dashboard-section">
+            <div class="analysis-box">
+                <h3>İl Bazlı Eczane Sayısı</h3>
+                <div class="chart-container">
+                    <canvas id="eczaneChart"></canvas>
+                </div>
+            </div>
+            <div class="analysis-box">
+                <h3>Her Deponun İlişkili Olduğu Eczane Sayısı</h3>
+                <div class="select-box-container">
+                    <select id="citySelect" class="select-box">
+                        <option value="">İl Seç</option>
+                    </select>
+                </div>
+                <div class="chart-container">
+                    <canvas id="pharmacyByDepotChart"></canvas>
+                </div>
+            </div>
+            <div class="analysis-box">
+                <h3>İl Bazlı Nüfus Yoğunluk Analizi</h3>
+                <div class="chloromap-container" id="chloromap"></div>
+            </div>
+        </div>
+
+        <!-- Orta Bölüm -->
+        <div class="dashboard-section preference-container">
+            <!-- Sol Kısım: Yıl bazlı tercih edilen kategori talepleri -->
+            <div class="performance-analysis">
+                <h3>Yıl Bazlı Tercih Edilen Kategori Miktarı</h3>
+                <div class="select-box-container">
+                    <select id="categoryCitySelect" class="select-box">
+                        <option value="">İl Seç</option>
+                    </select>
+                    <select id="categoryDepotSelect" class="select-box">
+                        <option value="">Depo Seç</option>
+                    </select>
+                </div>
+                <canvas id="categoryChart"></canvas>
+            </div>
+
+             <!-- Alt Bölüm: Depo Performans Analizi -->
+             <div class="performance-analysis">
+                <h3>Depo Performans Analizi(Talep Karşılama Oranları)</h3>
+                <div>
+                    <select id="compareCity1" class="select-box">
+                        <option value="">1. İl Seç</option>
+                    </select>
+                    <select id="compareDepot1" class="select-box">
+                        <option value="">1. Depo Seç</option>
+                    </select>
+                    </select>
+                    <select id="compareCity2" class="select-box">
+                        <option value="">2. İl Seç</option>
+                    </select>
+                    <select id="compareDepot2" class="select-box">
+                        <option value="">2. Depo Seç</option>
+                    </select>
+                    <button id="compareButton">Karşılaştır</button>
+                </div>
+                <canvas id="performanceChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Alt Bölüm: Talep Oranından Karşılanma Tahmimi -->
+        <!-- Alt Bölüm: Talep Oranından Karşılanma Tahmimi -->
+        <div class="talep-tahmin-container">
+            <div class="talep-tahmin-box">
+                <h3>Talep Oranı (%)'na Göre Kapasite Karşılama Tahmin</h3>
+                <input type="number" id="demandRate" placeholder="Talep Oranı (%)">
+                <button id="calculateButton">Hesapla</button>
+                <label for="illSelect" style="margin-left: 10px;">İl Seç:</label>
+                <select id="illSelect" style="margin-left: 5px;">
+                    <option value="">İl Seçin</option>
+                    <!-- Buraya dinamik olarak iller eklenecek -->
+                </select>
+                <canvas id="talepChart" width="400" height="100"></canvas>
+            </div>
+        </div>
+         <!-- İl Seçim Alanı -->
+    </div>
+
+    <script src="javascript/eczane.js"></script>
+</body>
+</html>

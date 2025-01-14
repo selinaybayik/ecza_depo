@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Depo Yönetimi Dashboard</title>
+    <link rel="stylesheet" href="css/maliyetler.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<body>
+    <div class="header">
+        <h1>Selçuk Ecza Deposu</h1>
+        <ul class="logout">
+            <li>
+                <a href="login.html" id="logoutLink">
+                    <span>Çıkış</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+<div class="sidebar">
+    <h2>Yönetim</h2>
+    <a href="deneme.html">
+        <img src="resimler/home.png" alt="Anasayfa" class="icon">
+        Anasayfa
+    </a>
+    <div class="menu-item">
+        <a href="#">
+            <img src="resimler/warehouse.png" alt="Depo Yönetimi" class="icon">
+            Depo Yönetimi
+        </a>
+        <div class="submenu">
+            <a href="./rakip.html">
+                <img src="resimler/map.png" alt="Rakip Depo Konum" class="icon">
+                Rakip Depo Konum
+            </a>
+            <a href="./satislar.html">
+                <img src="resimler/revenue.png" alt="Satış" class="icon">
+                Satış
+            </a>
+            <a href="./kapasite.html">
+                <img src="resimler/storage.png" alt="Kapasite" class="icon">
+                Kapasite
+            </a>
+            <a href="./maliyetler.html">
+                <img src="resimler/reduction.png" alt="Maliyetler" class="icon">
+                Maliyetler
+            </a>
+        </div>
+    </div>
+    <div class="menu-item">
+        <a href="eczane.html">
+            <img src="resimler/medicine.png" alt="Eczane ve Bölge Analizi" class="icon">
+            Eczane ve Bölge Analizi
+        </a>
+    </div>
+</div>
+
+<div class="main">
+    <h2 class="dashboard-title">Depo Yönetimi Analiz Dashboard</h2>
+
+    <div class="select-container">
+        <label for="citySelect">İl Seç:</label>
+        <select id="citySelect" class="select-box">
+            <option value="">Tümü</option>
+            <!-- İl seçenekleri dinamik olarak buraya yüklenecek -->
+        </select>
+        <label for="depotSelect">Depo Seç:</label>
+        <select id="depotSelect" class="select-box">
+            <option value="">Tümü</option>
+            <!-- Depo seçenekleri dinamik olarak buraya yüklenecek -->
+        </select>
+        <label for="compareCity2">İl Seç 2:</label>
+        <select id="compareCity2" class="select-box">
+            <option value="">Tümü</option>
+            <!-- İl seçenekleri dinamik olarak buraya yüklenecek -->
+        </select>
+        <label for="compareDepot2">Depo Seç 2:</label>
+        <select id="compareDepot2" class="select-box">
+            <option value="">Tümü</option>
+            <!-- Depo seçenekleri dinamik olarak buraya yüklenecek -->
+        </select>
+        <button id="compareButton">Karşılaştır</button>
+    </div>
+
+    <div class="charts-container">
+        <!-- İlk İki Grafik -->
+        <div class="chart">
+            <div class="chart-title">Her Depo İçin Her Maliyet Türü Değişimi</div>
+            <canvas id="chart1"></canvas>
+        </div>
+        <div class="chart">
+            <div class="chart-title">Maliyet & Kapasite Kullanım Oranı Analizi</div>
+            <canvas id="chart2"></canvas>
+        </div>
+    </div>
+
+    <div class="charts-container">
+        <!-- Son İki Grafik -->
+        <div class="chart">
+            <div class="chart-title">Her Depo İçin Toplam Dağıtım Maliyeti+2025 Yılı Tahmini Gösterimi</div>
+            <canvas id="chart3"></canvas>
+        </div>
+        <div class="chart">
+            <div class="chart-title">Her Ulaşım Türü İçin Yıllık Dağıtım Maliyeti+2025 Yılı Tahmini Gösterimi</div>
+            <canvas id="chart4"></canvas>
+        </div>
+    </div>
+    <div class="charts-container">
+        <!-- Son İki Grafik -->
+        <div class="chart">
+            <div class="chart-title">Her Yıl İçin En Düşük Ve En Yüksek Dağıtım Maliyetine Sahip Depolar+2025 Yılı Tahmini Gösterimi</div>
+            <canvas id="chart5"></canvas>
+        </div>
+    </div>
+</div>
+<script src="javascript/maliyetler.js"></script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Depo Yönetimi Dashboard</title>
+    <link rel="stylesheet" href="css/deneme.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<body>
+    <div class="header">
+        <h1>Selçuk Ecza Deposu</h1>
+        <ul class="logout">
+            <li>
+                <a href="login.html" id="logoutLink">
+                    <span>Çıkış</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    
+
+    <div class="sidebar">
+        <h2>Yönetim</h2>
+        <a href="deneme.html">
+            <img src="resimler/home.png" alt="Anasayfa" class="icon">
+            Anasayfa
+        </a>
+        <div class="menu-item">
+            <a href="#">
+                <img src="resimler/warehouse.png" alt="Depo Yönetimi" class="icon">
+                Depo Yönetimi
+            </a>
+            <div class="submenu">
+                <a href="./rakip.html">
+                    <img src="resimler/map.png" alt="Rakip Depo Konum" class="icon">
+                    Rakip Depo Konum
+                </a>
+                <a href="./satislar.html">
+                    <img src="resimler/revenue.png" alt="Satış" class="icon">
+                    Satış
+                </a>
+                <a href="./kapasite.html">
+                    <img src="resimler/storage.png" alt="Kapasite" class="icon">
+                    Kapasite
+                </a>
+                <a href="./maliyetler.html">
+                    <img src="resimler/reduction.png" alt="Maliyetler" class="icon">
+                    Maliyetler
+                </a>
+            </div>
+        </div>
+        <div class="menu-item">
+            <a href="eczane.html">
+                <img src="resimler/medicine.png" alt="Eczane ve Bölge Analizi" class="icon">
+                Eczane ve Bölge Analizi
+            </a>
+        </div>
+    </div>
+    
+    <div class="main">
+        <div class="dashboard-title">Ege Bölgesi Genel Gösterimleri</div>
+        
+        <div class="stats-container">
+            <div class="stat-box">Toplam Depo Sayısı: <span id="totalDepoCount"></span></div>
+            <div class="stat-box">Toplam Depo Maliyeti: <span id="totalDepoCost"></span></div>
+            <div class="stat-box">Toplam Depo Satış Miktarı: <span id="totalDepoSales"></span></div>
+            <div class="stat-box">Depoların İlişkili Olduğu Toplam Eczane Sayısı: <span id="totalPharmacyCount"></span></div>
+        </div>
+
+        <div class="charts-container">
+            <div class="chart">
+                <h4>Depoların Yıllık Satış Miktarları</h4>
+                <div class="select-container">
+                    <select id="ilSelect" class="select-box">
+                        <option value="">İl Seç</option>
+                    </select>
+                    <select id="depoSelect" class="select-box">
+                        <option value="">Depo Seç</option>
+                    </select>
+                    <select id="select-box" class="select-box">
+                        <option value="">Yıl Seç</option>
+                    </select>
+                </div>
+                <canvas id="salesBarChart"></canvas>
+            </div>
+            <div class="chart">
+                <h4>Depoların Yıllık Toplam Maliyetleri</h4>
+                <div class="select-container">
+                    <select id="ilSelectCost" class="select-box">
+                        <option value="">İl Seç</option>
+                    </select>
+                    <select id="depoSelectCost" class="select-box">
+                        <option value="">Depo Seç</option>
+                    </select>
+                </div>
+                <canvas id="costStackedBarChart"></canvas>
+            </div>
+            <div class="chart">
+                <h4>Her İldeki Depo Sayısı</h4>
+                <canvas id="regionBarChart"></canvas>
+            </div>
+        </div>
+
+        <div class="map-container">
+            <h3>Depo Konumları</h3>
+            <div id="map" style="height: 100%; width: 100%;"></div>
+        </div>
+    </div>
+    <script src="javascript/anasayfa.js"></script>
+</body>
+</html>

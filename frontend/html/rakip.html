@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Depo Yönetimi Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="css/rakip.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Selçuk Ecza Deposu</h1>
+        <ul class="logout">
+            <li>
+                <a href="login.html" id="logoutLink">
+                    <span>Çıkış</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="sidebar">
+        <h2>Yönetim</h2>
+        <a href="deneme.html">
+            <img src="resimler/home.png" alt="Anasayfa" class="icon">
+            Anasayfa
+        </a>
+        <div class="menu-item">
+            <a href="#">
+                <img src="resimler/warehouse.png" alt="Depo Yönetimi" class="icon">
+                Depo Yönetimi
+            </a>
+            <div class="submenu">
+                <a href="./rakip.html">
+                    <img src="resimler/map.png" alt="Rakip Depo Konum" class="icon">
+                    Rakip Depo Konum
+                </a>
+                <a href="./satislar.html">
+                    <img src="resimler/revenue.png" alt="Satış" class="icon">
+                    Satış
+                </a>
+                <a href="./kapasite.html">
+                    <img src="resimler/storage.png" alt="Kapasite" class="icon">
+                    Kapasite
+                </a>
+                <a href="./maliyetler.html">
+                    <img src="resimler/reduction.png" alt="Maliyetler" class="icon">
+                    Maliyetler
+                </a>
+            </div>
+        </div>
+        <div class="menu-item">
+            <a href="eczane.html">
+                <img src="resimler/medicine.png" alt="Eczane ve Bölge Analizi" class="icon">
+                Eczane ve Bölge Analizi
+            </a>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="dashboard-title">Rakip Depo Buffer Analiz--20KM</div>
+        <div class="map-container">
+            <div id="map"></div>
+            <div class="map-title">Rakip-Depo Buffer Analiz</div>
+        </div>
+    </div>
+
+    <!-- Lejant -->
+    <div class="legend">
+        <h4>Depo Türleri</h4>
+        <div class="legend-item">
+            <div class="green"></div><span>Rakip Depo</span>
+        </div>
+        <div class="legend-item">
+            <div class="blue"></div><span>Mevcut Depo</span>
+        </div>
+        <div class="legend-item">
+            <div class="red"></div><span>Buffer (20 km)</span>
+        </div>
+    </div>
+
+    <script src="javascript/rakip.js"></script>
+</body>
+</html>
